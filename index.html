@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#fff1f6" />
-    <meta name="description" content="A little love letter to make Roby smile and feel loved today." />
-    <meta property="og:title" content="Good morning, Roby! ♡" />
-    <meta property="og:description" content="A sweet little surprise is waiting for you. ♡" />
-    <title>Good morning, Roby! ♡</title>
+    <meta name="description" content="A gentle letter to Roby about love, listening, and finding our way forward together." />
+    <meta property="og:title" content="For us, Roby. ♡" />
+    <meta property="og:description" content="A softer beginning, one day at a time. ♡" />
+    <title>For Us, Roby ♡ — A Softer Beginning</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -158,14 +158,36 @@
         .art { min-height: 340px; }
         .mail-button { transform: scale(.78); }
         .mail-button:hover { transform: scale(.78) translateY(-7px); }
-        .love-pill.one { left: -5%; top: 15%; }
-        .love-pill.two { right: -5%; bottom: 12%; }
+        .love-pill.one { left: 0; top: 15%; }
+        .love-pill.two { right: 0; bottom: 12%; }
         .letter h2 { font-size: 38px; }
         .letter p { font-size: 15px; line-height: 1.85; }
       }
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
       }
+
+      /* A gentle, dedicated space for a verse about thoughtful speech. */
+      .quran-note {
+        position: relative;
+        margin: 32px 0 33px;
+        padding: clamp(21px, 4vw, 31px);
+        background: linear-gradient(135deg, rgba(255, 239, 245, .92), rgba(231, 243, 255, .82));
+        border: 1px solid rgba(222, 181, 208, .44);
+        border-radius: 20px;
+        text-align: center;
+      }
+      .quran-kicker { color: #b07195; text-transform: uppercase; letter-spacing: .13em; font-weight: 700; font-size: 11px; }
+      .letter .quran-quote {
+        margin: 15px auto 12px;
+        max-width: 560px;
+        font: italic 400 clamp(22px, 3.3vw, 31px)/1.45 "DM Serif Display", Georgia, serif;
+        color: #86688e;
+      }
+      .quran-source { color: #a05d85; text-underline-offset: 4px; font-size: 13px; font-weight: 700; }
+      .quran-source:hover { color: #854b75; }
+      .letter .quran-reflection { margin: 13px 0 0; font-size: 13px; line-height: 1.65; color: #8c859a; }
+      a:focus-visible { outline: 3px solid #a4bcef; outline-offset: 4px; border-radius: 3px; }
     </style>
   </head>
   <body>
@@ -174,34 +196,27 @@
     <div class="wrap">
       <header class="topbar">
         <div class="signature">for Roby<span> ♡</span></div>
-        <div class="top-label"><span class="tiny-heart">♥</span> made with so much love</div>
+        <div class="top-label"><span class="tiny-heart">♥</span> a new chapter, gently</div>
       </header>
 
       <main>
-        <section class="hero" aria-label="A surprise for Roby">
+        <section class="hero" aria-label="A new beginning for Roby">
           <div class="hero-copy">
-            <div class="eyebrow"><span class="ray" aria-hidden="true">☀</span> a little love to start your day</div>
-            <h1>Good morning,<span class="name">Roby!</span></h1>
-            <p class="intro">Before your day even really begins, I want to remind you of one little thing: <span class="highlight">you are so, so loved.</span> 💗</p>
+            <div class="eyebrow"><span class="ray" aria-hidden="true">✧</span> a little hope for us</div>
+            <h1>For us,<span class="name">Roby. ♡</span></h1>
+            <p class="intro">I don’t want small misunderstandings to take away the warmth between us. I made this because I love you, and because <span class="highlight">what we’re building matters to me.</span> 💗</p>
             <button class="cta" id="openButton" type="button" aria-expanded="false" aria-controls="cartinha">
-              Open my letter <span class="arrow" aria-hidden="true">↗</span>
+              Read my heart <span class="arrow" aria-hidden="true">↗</span>
             </button>
-            <div class="tease-box" id="teaseBox" hidden role="status" aria-live="polite" aria-atomic="true">
-              <span class="tease-emoji" aria-hidden="true">💌</span>
-              <div class="tease-copy">
-                <p class="tease-message" id="teaseMessage"></p>
-                <span class="tease-progress" id="teaseProgress"></span>
-              </div>
-            </div>
-            <p class="aside-note"><span class="dot" aria-hidden="true"></span> made just for you, with my whole heart</p>
+            <p class="aside-note"><span class="dot" aria-hidden="true"></span> no pressure to reply — just something from my heart</p>
           </div>
           <div class="art">
             <div class="art-circle" aria-hidden="true"></div>
             <span class="art-star one" aria-hidden="true">✳</span>
             <span class="art-star two" aria-hidden="true">✦</span>
             <span class="art-star three" aria-hidden="true">✧</span>
-            <span class="love-pill one" aria-hidden="true">you + me ♡</span>
-            <span class="love-pill two" aria-hidden="true">with love ✿</span>
+            <span class="love-pill one" aria-hidden="true">same team ♡</span>
+            <span class="love-pill two" aria-hidden="true">one day at a time ✿</span>
             <button class="mail-button" id="envelopeButton" type="button" aria-label="Open the letter for Roby" aria-controls="cartinha" aria-expanded="false">
               <span class="mail-scene" aria-hidden="true">
                 <span class="mail-back"></span>
@@ -211,37 +226,47 @@
                 <span class="mail-seal">♡</span>
               </span>
             </button>
-            <span class="mail-caption" id="mailCaption" aria-hidden="true">a little message just for you</span>
+            <span class="mail-caption" id="mailCaption" aria-hidden="true">a letter about us</span>
           </div>
         </section>
 
-        <section class="letter-wrap" id="cartinha" hidden aria-label="Love letter for Roby">
-          <div class="letter-top">♡ you have a love letter ♡</div>
+        <section class="letter-wrap" id="cartinha" hidden aria-label="A letter for Roby about a new beginning">
+          <div class="letter-top">♡ a softer way forward ♡</div>
           <article class="letter">
-            <span class="letter-small">To my Roby, with love</span>
+            <span class="letter-small">To my Roby, with an open heart</span>
             <h2>My love,</h2>
-            <p>Maybe you’re reading this while you’re still a little sleepy, but I wanted one of the first things you felt today to be just how deeply <strong>you are loved.</strong></p>
-            <p>I wish I could turn all the affection I feel for you into the tightest hug. Since I can’t fit a hug through a screen, I left these words here to keep you company this morning.</p>
-            <p>You have such a special place in my heart. Just having you in this world brings more color to my days, more lightness, and more reasons to smile. <strong>I love you, Roby.</strong> I hope you never forget how much you mean to me.</p>
-            <p>I hope your day is peaceful, beautiful, and full of little reasons to be happy. And if it gets difficult, remember that someone is here cheering you on, hoping you’re okay, and loving you more than words can say.</p>
-            <p>If I could give you one gift every morning, it would be the certainty that <strong>you deserve all the love and tenderness in the world.</strong></p>
-            <p class="closing">With all my love,<br />from someone who feels so lucky to have you. ♡</p>
-            <p class="ps">P.S. You can smile now. That was my plan all along. ☁️💗</p>
-            <div class="last-words" aria-label="One last thing from my heart">
+            <p>Sometimes something small turns into a difficult conversation, and suddenly we feel far away from each other. I don’t want those moments to slowly wear down something so precious to me: <strong>us.</strong></p>
+            <p>I know I can overexplain. When I’m afraid of being misunderstood, I repeat myself, even when what we need is a little more listening. I understand that this can be tiring, and I’m sorry for my part in that. <strong>I want to speak more simply, listen more carefully, and know when to pause.</strong></p>
+            <p>I see that you’re trying too, Roby. I know we’re both learning. Real change doesn’t happen overnight, and I don’t expect either of us to be perfect.</p>
+            <p>There’s something I especially want you to know: <strong>my struggle is not against you. It’s against the misunderstanding, the tension, and the moments that make us forget we’re on the same side.</strong></p>
+            <p>When things feel difficult, I hope we can choose kindness over coldness. And when one of us needs space, I want us to be able to say that gently, without fear, and find our way back to the conversation when we’re ready.</p>
+            <p>I don’t want a love that feels exhausting. I want us to feel safe enough to be honest, patient enough to understand, and gentle enough to protect what we’ve built.</p>
+            <p>I love you so much. I’m not promising that I’ll never make another mistake. <strong>I’m promising to keep learning and to show you, through my actions, that our relationship matters.</strong></p>
+
+            <aside class="quran-note" aria-label="A reminder from the Quran">
+              <span class="quran-kicker">✧ A reminder for my heart</span>
+              <p class="quran-quote">“And tell My servants to say that which is best.”</p>
+              <a class="quran-source" href="https://quran.com/17/53" target="_blank" rel="noopener noreferrer">The Qur’an · Surah Al-Isra 17:53</a>
+              <p class="quran-reflection">I want my words to bring us peace, not distance.</p>
+            </aside>
+
+            <p class="closing">With all my love, and a real wish to grow beside you. ♡</p>
+            <p class="ps">P.S. You don’t need to find the perfect words to answer this. I just wanted you to know what’s in my heart. ☁️💗</p>
+            <div class="last-words" aria-label="One last thought from my heart">
               <span class="last-words-heart" aria-hidden="true">♡</span>
-              <p>I miss the moments I haven't even lived with you yet, my love.</p>
+              <p>It’s not you against me. It’s us, together, facing the problem.</p>
             </div>
           </article>
         </section>
 
         <section class="reasons" id="reasons" hidden aria-label="One more little bit of love">
-          <h2>Just a little more love...</h2>
-          <p class="sub">Because one sweet message could never be enough. ✨</p>
-          <div class="note-card" aria-live="polite" aria-atomic="true"><span class="note-heart" aria-hidden="true">♥</span><p id="littleNote">The world is a lovelier place with you in it.</p></div>
-          <button class="more-button" type="button" id="moreButton">tell me one more thing ♡</button>
+          <h2>Small promises, real changes.</h2>
+          <p class="sub">Not perfection. Just little things I want to practice, every day. ✨</p>
+          <div class="note-card" aria-live="polite" aria-atomic="true"><span class="note-heart" aria-hidden="true">♥</span><p id="littleNote">I will listen before I explain.</p></div>
+          <button class="more-button" type="button" id="moreButton">another little promise ♡</button>
         </section>
       </main>
-      <footer>Made with <span>♥</span>, just for Roby.</footer>
+      <footer>Made with <span>♥</span>, for Roby — and for the gentler days ahead.</footer>
     </div>
 
     <script>
@@ -251,9 +276,6 @@
       const reasons = document.getElementById('reasons');
       const moreButton = document.getElementById('moreButton');
       const littleNote = document.getElementById('littleNote');
-      const teaseBox = document.getElementById('teaseBox');
-      const teaseMessage = document.getElementById('teaseMessage');
-      const teaseProgress = document.getElementById('teaseProgress');
       const mailCaption = document.getElementById('mailCaption');
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -277,67 +299,37 @@
         }
       }
 
-      const littleTeases = [
-        { message: 'Wait... are you really Roby? 👀', button: 'Yep, it’s me! ↗', caption: 'hmm... prove it 👀' },
-        { message: 'Are you suuuure? Tap again, cutie. 😇', button: 'I’m sure! ↗', caption: 'not convinced yet 🤭' },
-        { message: 'Oops, wrong button! Just kidding. 🤭', button: 'You’re annoying 😂 ↗', caption: 'hehe, one more? ♡' },
-        { message: 'Okay, okay! ONE last tap. I promise. 💗', button: 'LET ME IN 💌 ↗', caption: 'almost there, my love ♡' }
-      ];
-      const requiredTaps = 5;
-      let tapCount = 0;
-
-      function revealLetter() {
-        letter.hidden = false;
-        reasons.hidden = false;
-        letter.classList.add('revealed');
-        envelopeButton.classList.add('open');
-        envelopeButton.setAttribute('aria-expanded', 'true');
-        openButton.setAttribute('aria-expanded', 'true');
-        openButton.innerHTML = 'Read my letter <span class="arrow" aria-hidden="true">↗</span>';
-        mailCaption.textContent = 'you did it! ♡';
-        teaseMessage.textContent = 'Okay, you win. I love you! 🥹💗';
-        teaseProgress.textContent = '5/5 — love letter unlocked';
-        const rect = envelopeButton.getBoundingClientRect();
-        sprinkleHearts(rect.left + rect.width / 2, rect.top + rect.height / 2, 23);
+      function openLetter() {
+        if (letter.hidden) {
+          letter.hidden = false;
+          reasons.hidden = false;
+          letter.classList.add('revealed');
+          envelopeButton.classList.add('open');
+          envelopeButton.setAttribute('aria-expanded', 'true');
+          openButton.setAttribute('aria-expanded', 'true');
+          openButton.innerHTML = 'Read it again <span class="arrow" aria-hidden="true">↗</span>';
+          mailCaption.textContent = 'from my heart to yours ♡';
+          const rect = envelopeButton.getBoundingClientRect();
+          sprinkleHearts(rect.left + rect.width / 2, rect.top + rect.height / 2, 21);
+        }
         window.setTimeout(() => {
           letter.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
-        }, prefersReducedMotion ? 0 : 450);
+        }, prefersReducedMotion ? 0 : 340);
       }
 
-      function handleLetterTap() {
-        if (!letter.hidden) {
-          letter.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
-          return;
-        }
-        tapCount++;
-        teaseBox.hidden = false;
-        if (tapCount < requiredTaps) {
-          const tease = littleTeases[tapCount - 1];
-          teaseMessage.textContent = tease.message;
-          teaseProgress.textContent = `${tapCount}/${requiredTaps} tiny taps of love`;
-          openButton.innerHTML = `${tease.button} <span class="arrow" aria-hidden="true">↗</span>`;
-          mailCaption.textContent = tease.caption;
-          if (!prefersReducedMotion) {
-            openButton.classList.remove('playful-wiggle');
-            void openButton.offsetWidth;
-            openButton.classList.add('playful-wiggle');
-          }
-        } else {
-          revealLetter();
-        }
-      }
-
-      openButton.addEventListener('click', handleLetterTap);
-      envelopeButton.addEventListener('click', handleLetterTap);
+      openButton.addEventListener('click', openLetter);
+      envelopeButton.addEventListener('click', openLetter);
 
       const notes = [
-        'The world is a lovelier place with you in it.',
-        'You deserve a day full of beautiful little things.',
-        'Your smile is one of my favorite places to be.',
-        'Never forget how incredibly special you are.',
-        'If I could, I would send you the biggest hug right now.',
-        'I would choose you in a thousand different mornings.',
-        'You are my favorite thought today.'
+        'I will listen before I explain.',
+        'I will ask instead of assuming.',
+        'I will make room for your feelings, too.',
+        'I will pause when emotions run high.',
+        'I will try to say things simply and kindly.',
+        'I will respect your need for space.',
+        'I will own my mistakes without making excuses.',
+        'I will notice the effort you make, too.',
+        'I want us to understand each other, not win arguments.'
       ];
       let noteIndex = 0;
       moreButton.addEventListener('click', () => {
