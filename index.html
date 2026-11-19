@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#fff1f6" />
-    <meta name="description" content="A gentle letter to Roby about love, listening, and finding our way forward together." />
+    <meta name="description" content="A song and a gentle love letter to Roby about growing together and finding our way forward." />
     <meta property="og:title" content="For us, Roby. ♡" />
     <meta property="og:description" content="A softer beginning, one day at a time. ♡" />
-    <title>For Us, Roby ♡ — A Softer Beginning</title>
+    <title>For Us, Roby ♡ — Our Song, A Softer Beginning</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -188,6 +188,30 @@
       .quran-source:hover { color: #854b75; }
       .letter .quran-reflection { margin: 13px 0 0; font-size: 13px; line-height: 1.65; color: #8c859a; }
       a:focus-visible { outline: 3px solid #a4bcef; outline-offset: 4px; border-radius: 3px; }
+
+      /* A song to set a gentle tone before opening the letter. */
+      .song-card {
+        width: min(100%, 462px); margin: 27px 0 8px;
+        padding: 17px; border: 1px solid rgba(231, 131, 167, .30);
+        border-radius: 23px; background: rgba(255, 255, 255, .80);
+        box-shadow: 0 13px 34px rgba(167, 131, 162, .12);
+      }
+      .song-eyebrow { margin: 0 0 7px; color: #b76d92; font-size: 11px; letter-spacing: .12em; font-weight: 700; text-transform: uppercase; }
+      .song-title { margin: 0; color: #695773; font: italic 400 clamp(24px, 3vw, 30px)/1.2 "DM Serif Display", Georgia, serif; }
+      .song-artist { margin: 5px 0 12px; color: #998aa0; font-size: 13px; }
+      .song-video { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 14px; background: linear-gradient(145deg, #f3d5e5 0%, #e1e8f9 58%, #cee7f5 100%); }
+      .song-video iframe { display: block; width: 100%; height: 100%; border: 0; }
+      .song-play { width: 100%; height: 100%; border: 0; background: transparent; color: #856783; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 11px; cursor: pointer; }
+      .song-play:hover .song-play-icon { transform: scale(1.07); box-shadow: 0 14px 35px rgba(191, 106, 151, .32); }
+      .song-play-icon { width: 63px; height: 63px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(145deg, #ed9db9, #d980a6); color: white; font-size: 25px; padding-left: 4px; box-shadow: 0 8px 24px rgba(191, 106, 151, .25); transition: transform .2s, box-shadow .2s; }
+      .song-play-caption { color: #815d80; font-weight: 700; font-size: 13px; }
+      .song-decoration { color: rgba(168, 98, 150, .6); font-size: 20px; letter-spacing: .3em; }
+      .song-invite { margin: 13px 0 5px; color: #82768e; font-size: 13px; line-height: 1.65; }
+      .song-fallback { display: inline-block; margin-top: 4px; color: #b66d92; font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+      .song-fallback:focus-visible { outline: 3px solid #a4bcef; outline-offset: 3px; }
+      @media (max-width: 790px) {
+        .song-card { margin: 25px auto 8px; text-align: left; }
+      }
     </style>
   </head>
   <body>
@@ -205,8 +229,22 @@
             <div class="eyebrow"><span class="ray" aria-hidden="true">✧</span> a little hope for us</div>
             <h1>For us,<span class="name">Roby. ♡</span></h1>
             <p class="intro">I don’t want small misunderstandings to take away the warmth between us. I made this because I love you, and because <span class="highlight">what we’re building matters to me.</span> 💗</p>
+            <section class="song-card" aria-label="Our song, I Won't Give Up by Jason Mraz">
+              <p class="song-eyebrow">♫ A little song before my words</p>
+              <h2 class="song-title">I Won’t Give Up ♡</h2>
+              <p class="song-artist">Jason Mraz · Official lyric video</p>
+              <div class="song-video" id="songVideo">
+                <button class="song-play" id="songPlayButton" type="button" aria-label="Play our song, I Won't Give Up by Jason Mraz">
+                  <span class="song-decoration" aria-hidden="true">✦ ♡ ✦</span>
+                  <span class="song-play-icon" aria-hidden="true">▶</span>
+                  <span class="song-play-caption">Press play, my love ♡</span>
+                </button>
+              </div>
+              <p class="song-invite">I chose this song for us. If you’d like, press play, then take your time reading what’s in my heart. 💗</p>
+              <a class="song-fallback" href="https://www.youtube.com/watch?v=TdN5GyTl8K0" target="_blank" rel="noopener noreferrer">If the player doesn’t work, listen on YouTube ↗</a>
+            </section>
             <button class="cta" id="openButton" type="button" aria-expanded="false" aria-controls="cartinha">
-              Read my heart <span class="arrow" aria-hidden="true">↗</span>
+              Now, open my letter <span class="arrow" aria-hidden="true">↓</span>
             </button>
             <p class="aside-note"><span class="dot" aria-hidden="true"></span> no pressure to reply — just something from my heart</p>
           </div>
@@ -270,6 +308,19 @@
     </div>
 
     <script>
+      const songPlayButton = document.getElementById('songPlayButton');
+      const songVideo = document.getElementById('songVideo');
+      songPlayButton.addEventListener('click', () => {
+        // Load the artist's official YouTube video only after a deliberate click.
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/TdN5GyTl8K0?autoplay=1&playsinline=1&rel=0';
+        iframe.title = "Jason Mraz — I Won't Give Up (official lyric video)";
+        iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+        songVideo.replaceChildren(iframe);
+      });
+
       const openButton = document.getElementById('openButton');
       const envelopeButton = document.getElementById('envelopeButton');
       const letter = document.getElementById('cartinha');
